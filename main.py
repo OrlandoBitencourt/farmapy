@@ -27,23 +27,21 @@ from datetime import datetime
 
 print("***** FARMAPY - SUS *****")
 
-data_validade_medicamento = datetime.strptime('2021-05-15', "%Y-%m-%d").date()
+data_validade_receita = datetime.strptime('2021-05-15', "%Y-%m-%d").date()
 
-receita1 = dict(nome_medicamento="ibunprofeno",
-                   validade=data_validade_medicamento,
-                   quantidade=1,
-                   nome_paciente="Orlando",
-                   cpf_paciente="0000000000")
+receita1 = dict(nome_medicamento="ibunprofeno", validade=data_validade_receita, quantidade=1, nome_paciente="Orlando",
+                cpf_paciente="0000000000")
 
 print("-----------------")
-paciente1 = Paciente("Orlando","0000000000",receita1)
+paciente1 = Paciente("Orlando", "0000000000", receita1)
 print(paciente1)
+
 print("-----------------")
 farmaceutico1 = Farmaceutico("Gabriela")
 print(farmaceutico1)
 
 print("-----------------")
-print("\nTESTE validar_receita: ")
+print("\nTESTE receber_a_receita: ")
 farmaceutico1.receber_a_receita(paciente1, receita1)
 
 print("-----------------")
@@ -51,7 +49,7 @@ print("\nTESTE validar_receita")
 farmaceutico1.validar_receita(paciente1, receita1)
 
 print("-----------------")
-print("\nTESTE verificar estoque")
+print("\nTESTE verificar_estoque")
 farmaceutico1.verificar_estoque(receita1)
 
 print("-----------------")
@@ -61,4 +59,3 @@ farmaceutico1.retirar_do_estoque(receita1)
 print("-----------------")
 print("\nTESTE entregar_medicamento")
 farmaceutico1.entregar_medicamento(receita1)
-

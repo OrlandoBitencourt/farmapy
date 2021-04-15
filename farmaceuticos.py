@@ -1,17 +1,19 @@
 from datetime import datetime
 
-class Farmaceutico:
 
+class Farmaceutico:
 
     def __init__(self, nome: str):
         self.nome = nome
+        self.receitas_recebidas = {}
 
     def __str__(self):
         return f"Bem vindo a FARMAPY SUS, meu nome é {self.nome}!\n"
 
     def receber_a_receita(self, dados_paciente, receita: dict) -> bool:
         data_hora = datetime.strftime(datetime.now(), "%Y-%m-%d %H:%M:%S")
-        self.receitas_recebidas = dict(hora_recebimento=data_hora, nome=dados_paciente.nome, cpf=dados_paciente.cpf, receita=receita)
+        self.receitas_recebidas = dict(hora_recebimento=data_hora, nome=dados_paciente.nome, cpf=dados_paciente.cpf,
+                                       receita=receita)
         print(f"Receita recebida: {self.receitas_recebidas}")
         return True
 
@@ -58,10 +60,8 @@ class Farmaceutico:
                 estoque_atual = int(linha[1].strip())
                 estoque_restante = estoque_atual - int(receita["quantidade"])
 
-                print(f'\nItem: {receita["nome_medicamento"]}\n'
-                        f'Solicitado: {receita["quantidade"]}\n'
-                        f"Estoque: {linha[1]}\n"
-                        f"Restante em estoque: {estoque_restante}\n")
+                print(f'\nItem: {receita["nome_medicamento"]}\nSolicitado: {receita["quantidade"]}\nEstoque: {linha[1]}'
+                      f'\nRestante em estoque: {estoque_restante}\n')
 
                 linha[1] = str(estoque_restante)+"\n"
 
