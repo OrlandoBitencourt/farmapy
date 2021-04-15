@@ -42,20 +42,20 @@ print(farmaceutico1)
 
 print("-----------------")
 print("\nTESTE receber_a_receita: ")
-farmaceutico1.receber_a_receita(paciente1, receita1)
+farmaceutico1.receber_a_receita(paciente1)
 
 print("-----------------")
 print("\nTESTE validar_receita")
-farmaceutico1.validar_receita(paciente1, receita1)
+farmaceutico1.validar_receita(paciente1)
 
 print("-----------------")
 print("\nTESTE verificar_estoque")
-farmaceutico1.verificar_estoque(receita1)
+farmaceutico1.verificar_estoque(paciente1)
 
 print("-----------------")
 print("\nTESTE retirar_do_estoque")
-farmaceutico1.retirar_do_estoque(receita1)
+farmaceutico1.retirar_do_estoque(paciente1)
 
 print("-----------------")
 print("\nTESTE entregar_medicamento")
-farmaceutico1.entregar_medicamento(receita1)
+farmaceutico1.entregar_medicamento(paciente1)
