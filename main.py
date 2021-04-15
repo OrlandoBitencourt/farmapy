@@ -34,10 +34,9 @@ receita1 = dict(nome_medicamento="ibunprofeno",
                    quantidade=1,
                    nome_paciente="Orlando",
                    cpf_paciente="0000000000")
+
 print("-----------------")
 paciente1 = Paciente("Orlando","0000000000",receita1)
-dados_paciente = dict(nome= paciente1.nome,
-                      cpf= paciente1.cpf)
 print(paciente1)
 print("-----------------")
 farmaceutico1 = Farmaceutico("Gabriela")
@@ -45,11 +44,11 @@ print(farmaceutico1)
 
 print("-----------------")
 print("\nTESTE validar_receita: ")
-farmaceutico1.receber_a_receita(dados_paciente, receita1)
+farmaceutico1.receber_a_receita(paciente1, receita1)
 
 print("-----------------")
 print("\nTESTE validar_receita")
-farmaceutico1.validar_receita(dados_paciente, receita1)
+farmaceutico1.validar_receita(paciente1, receita1)
 
 print("-----------------")
 print("\nTESTE verificar estoque")
@@ -62,3 +61,4 @@ farmaceutico1.retirar_do_estoque(receita1)
 print("-----------------")
 print("\nTESTE entregar_medicamento")
 farmaceutico1.entregar_medicamento(receita1)
+

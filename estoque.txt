@@ -1,2 +1,2 @@
-ibunprofeno;35
+ibunprofeno;33
 paracetamol;20

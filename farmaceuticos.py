@@ -9,17 +9,17 @@ class Farmaceutico:
     def __str__(self):
         return f"Bem vindo a FARMAPY SUS, meu nome é {self.nome}!\n"
 
-    def receber_a_receita(self, dados_paciente: dict, receita: dict) -> bool:
+    def receber_a_receita(self, dados_paciente, receita: dict) -> bool:
         data_hora = datetime.strftime(datetime.now(), "%Y-%m-%d %H:%M:%S")
-        self.receitas_recebidas = dict(hora_recebimento= data_hora, nome= dados_paciente["nome"], cpf=dados_paciente["cpf"],receita= receita)
+        self.receitas_recebidas = dict(hora_recebimento=data_hora, nome=dados_paciente.nome, cpf=dados_paciente.cpf, receita=receita)
         print(f"Receita recebida: {self.receitas_recebidas}")
         return True
 
-    def validar_receita(self, dados_paciente: dict, receita: dict) -> bool:
-        if dados_paciente["nome"] == receita["nome_paciente"] \
+    def validar_receita(self, dados_paciente, receita: dict) -> bool:
+        if receita["nome_paciente"] == dados_paciente.nome \
                 and receita["validade"] >= datetime.today().date() \
                 and receita["quantidade"] >= 1\
-                and receita["cpf_paciente"] == dados_paciente["cpf"]:
+                and receita["cpf_paciente"] == dados_paciente.cpf:
 
             print("\nReceita válida.\n")
             return True
