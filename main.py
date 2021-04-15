@@ -25,7 +25,7 @@ from datetime import datetime
 
 """
 
-print("***** Famacia SUS *****")
+print("***** FARMAPY - SUS *****")
 
 data_validade_medicamento = datetime.strptime('2021-05-15', "%Y-%m-%d").date()
 

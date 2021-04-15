@@ -7,7 +7,7 @@ class Farmaceutico:
         self.nome = nome
 
     def __str__(self):
-        return f"Bem vindo a farmacia Sus, meu nome é {self.nome}!\n"
+        return f"Bem vindo a FARMAPY SUS, meu nome é {self.nome}!\n"
 
     def receber_a_receita(self, nome_paciente: str, receita: dict) -> bool:
         data_hora = datetime.strftime(datetime.now(), "%Y-%m-%d %H:%M:%S")
